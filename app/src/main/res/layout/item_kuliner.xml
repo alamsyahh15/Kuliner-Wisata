@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="250dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        android:layout_margin="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageKuliner"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_launcher_background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:id="@+id/titleKuliner"
+                android:textSize="18sp"
+                android:layout_above="@+id/ratingKuliner"
+                android:textColor="@android:color/white"
+                android:text="Bubur Sop Ayam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"/>
+
+            <RatingBar
+                android:id="@+id/ratingKuliner"
+                android:padding="4dp"
+                android:layout_alignParentBottom="true"
+                android:rating="5"
+                android:theme="@style/RatingBar"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
