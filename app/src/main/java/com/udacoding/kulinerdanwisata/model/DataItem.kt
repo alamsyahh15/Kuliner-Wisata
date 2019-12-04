@@ -1,6 +1,7 @@
 package com.udacoding.kulinerdanwisata.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 
 data class DataItem(
@@ -19,4 +20,4 @@ data class DataItem(
 
 	@field:SerializedName("gambar")
 	val gambar: String? = null
-)
+) : Serializable

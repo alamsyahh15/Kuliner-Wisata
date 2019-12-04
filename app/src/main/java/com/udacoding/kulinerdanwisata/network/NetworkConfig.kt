@@ -1,12 +1,11 @@
 package com.udacoding.kulinerdanwisata.network
 
-import com.udacoding.kulinerdanwisata.model.ResultWisata
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+
 
 object NetworkConfig {
 
@@ -27,10 +26,6 @@ object NetworkConfig {
             .build()
 
     }
-    fun service() : NetworkService = getRetrofit().create(NetworkService::class.java)
-}
-
-interface NetworkService {
-    @GET("?action=findAll")
-    fun getWisata(): Call<ResultWisata>
+   fun getService() : NetworkService = getRetrofit().create(
+       NetworkService::class.java)
 }

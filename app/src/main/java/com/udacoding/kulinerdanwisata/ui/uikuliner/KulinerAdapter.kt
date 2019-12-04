@@ -1,9 +1,11 @@
-package com.udacoding.kulinerdanwisata.uikuliner
+package com.udacoding.kulinerdanwisata.ui.uikuliner
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.udacoding.kulinerdanwisata.DetailActivity
 import com.udacoding.kulinerdanwisata.R
 import kotlinx.android.synthetic.main.item_kuliner.view.*
 
@@ -20,7 +22,12 @@ class KulinerAdapter(val dataImage : Array<Int>, val dataTitle : Array<String>)
 
     override fun onBindViewHolder(holder: MyHolder, position: Int) {
         holder.onBind(dataImage[position],dataTitle[position])
-
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView.context,DetailActivity::class.java)
+            intent.putExtra("dataImage1", dataImage[position])
+            intent.putExtra("dataTitle",dataTitle[position])
+            holder.itemView.context.startActivity(intent)
+        }
     }
 
     class MyHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
